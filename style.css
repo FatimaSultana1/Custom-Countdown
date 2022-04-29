@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Radio+Canada&display=swap');
 html {
   box-sizing: border-box;
 }
@@ -8,7 +9,7 @@ body {
   overflow-y: hidden;
   display: flex;
   align-items: center;
-
+  font-family: 'Radio Canada', sans-serif;
 }
 
 /* Video Background */
@@ -47,7 +48,7 @@ video {
   z-index: 2;
   display: flex;
   justify-content: center;
-
+  background: rgba(255,255,255,0.85);
 }
 
 .input-container {
@@ -80,7 +81,7 @@ input {
   border-radius: 20px;
   background: #fff;
   outline: none;
-
+  font-family: 'Radio Canada', sans-serif;
 }
 
 /* Button */
@@ -97,7 +98,9 @@ button {
   outline: none;
 }
 
-
+button:hover{
+  filter: brightness(130%);
+}
 
 /* Countdown */
 ul {
@@ -105,7 +108,7 @@ ul {
 }
 
 li {
-
+  display: inline-block;
   font-size: 30px;
   list-style-type: none;
   padding: 10px;
@@ -123,8 +126,27 @@ li span {
   position: relative;
   top: 60px;
 }
-
-
+.complete-title{
+  animation: complete 4s infinite;
+}
+@keyframes complete{
+  0% {
+    color: rgb(226, 61, 61);
+  }
+  25%{
+    color: rgb(226, 196, 61);
+  }
+  50%{
+    color: rgb(61, 226, 124);
+    transform: scale(1.5);
+  }
+  75%{
+    color: rgb(88, 61, 226);
+  }
+  100%{
+    color: rgb(226, 61, 226);
+  }
+}
 /* Media Query: Large Smartphone (Vertical) */
 @media screen and (max-width: 600px) {
   .video-background {
@@ -139,7 +161,8 @@ li span {
   }
 
   .container {
-
+    min-width: unset;
+    min-width: 95vw;
     min-height: 245px;
     padding: 20px;
     margin: 10px;
